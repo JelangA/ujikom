@@ -170,7 +170,7 @@ namespace espepe
             this.txt3.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.txt3.ItemHighLightForeColor = System.Drawing.Color.White;
             this.txt3.ItemTopMargin = 3;
-            this.txt3.Location = new System.Drawing.Point(112, 151);
+            this.txt3.Location = new System.Drawing.Point(112, 61);
             this.txt3.Name = "txt3";
             this.txt3.Size = new System.Drawing.Size(259, 32);
             this.txt3.TabIndex = 7;
@@ -204,6 +204,7 @@ namespace espepe
             this.txtIdLevel.Name = "txtIdLevel";
             this.txtIdLevel.Size = new System.Drawing.Size(99, 20);
             this.txtIdLevel.TabIndex = 5;
+            this.txtIdLevel.Visible = false;
             // 
             // bunifuButton5
             // 
@@ -383,6 +384,7 @@ namespace espepe
             this.bunifuButton4.TextMarginLeft = 0;
             this.bunifuButton4.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton4.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton4.Click += new System.EventHandler(this.bunifuButton4_Click);
             // 
             // bunifuButton3
             // 
@@ -472,6 +474,7 @@ namespace espepe
             this.bunifuButton3.TextMarginLeft = 0;
             this.bunifuButton3.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton3.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton3.Click += new System.EventHandler(this.bunifuButton3_Click);
             // 
             // bunifuLabel9
             // 
@@ -483,7 +486,7 @@ namespace espepe
             this.bunifuLabel9.CursorType = null;
             this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel9.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel9.Location = new System.Drawing.Point(429, 191);
+            this.bunifuLabel9.Location = new System.Drawing.Point(429, 151);
             this.bunifuLabel9.Name = "bunifuLabel9";
             this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel9.Size = new System.Drawing.Size(69, 15);
@@ -502,7 +505,7 @@ namespace espepe
             this.bunifuLabel8.CursorType = null;
             this.bunifuLabel8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel8.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel8.Location = new System.Drawing.Point(463, 151);
+            this.bunifuLabel8.Location = new System.Drawing.Point(461, 191);
             this.bunifuLabel8.Name = "bunifuLabel8";
             this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel8.Size = new System.Drawing.Size(33, 15);
@@ -510,6 +513,7 @@ namespace espepe
             this.bunifuLabel8.Text = "Id SPP";
             this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel8.Visible = false;
             // 
             // bunifuLabel6
             // 
@@ -648,7 +652,7 @@ namespace espepe
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel4.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel4.Location = new System.Drawing.Point(35, 200);
+            this.bunifuLabel4.Location = new System.Drawing.Point(34, 191);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel4.Size = new System.Drawing.Size(48, 15);
@@ -656,6 +660,7 @@ namespace espepe
             this.bunifuLabel4.Text = "Tgl Bayar";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel4.Visible = false;
             // 
             // bunifuButton1
             // 
@@ -757,7 +762,7 @@ namespace espepe
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel3.Location = new System.Drawing.Point(35, 160);
+            this.bunifuLabel3.Location = new System.Drawing.Point(58, 73);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(24, 15);
@@ -847,6 +852,7 @@ namespace espepe
             this.bunifuLabel2.Text = "Id Petugas";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel2.Visible = false;
             // 
             // bunifuLabel1
             // 
@@ -859,7 +865,7 @@ namespace espepe
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel1.Location = new System.Drawing.Point(27, 73);
+            this.bunifuLabel1.Location = new System.Drawing.Point(17, 151);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(79, 15);
@@ -867,6 +873,7 @@ namespace espepe
             this.bunifuLabel1.Text = "Id Pembayaran";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel1.Visible = false;
             // 
             // txt1
             // 
@@ -895,7 +902,7 @@ namespace espepe
             this.txt1.IconRight = null;
             this.txt1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txt1.Lines = new string[0];
-            this.txt1.Location = new System.Drawing.Point(112, 61);
+            this.txt1.Location = new System.Drawing.Point(112, 143);
             this.txt1.MaxLength = 32767;
             this.txt1.MinimumSize = new System.Drawing.Size(1, 1);
             this.txt1.Modified = false;
@@ -940,6 +947,7 @@ namespace espepe
             this.txt1.TextMarginTop = 0;
             this.txt1.TextPlaceholder = "";
             this.txt1.UseSystemPasswordChar = false;
+            this.txt1.Visible = false;
             this.txt1.WordWrap = true;
             // 
             // txt8
@@ -969,7 +977,7 @@ namespace espepe
             this.txt8.IconRight = null;
             this.txt8.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txt8.Lines = new string[0];
-            this.txt8.Location = new System.Drawing.Point(511, 182);
+            this.txt8.Location = new System.Drawing.Point(511, 143);
             this.txt8.MaxLength = 32767;
             this.txt8.MinimumSize = new System.Drawing.Size(1, 1);
             this.txt8.Modified = false;
@@ -1043,7 +1051,7 @@ namespace espepe
             this.txt7.IconRight = null;
             this.txt7.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txt7.Lines = new string[0];
-            this.txt7.Location = new System.Drawing.Point(511, 142);
+            this.txt7.Location = new System.Drawing.Point(511, 182);
             this.txt7.MaxLength = 32767;
             this.txt7.MinimumSize = new System.Drawing.Size(1, 1);
             this.txt7.Modified = false;
@@ -1088,6 +1096,7 @@ namespace espepe
             this.txt7.TextMarginTop = 0;
             this.txt7.TextPlaceholder = "";
             this.txt7.UseSystemPasswordChar = false;
+            this.txt7.Visible = false;
             this.txt7.WordWrap = true;
             // 
             // txt6
@@ -1310,6 +1319,7 @@ namespace espepe
             this.txt2.TextMarginTop = 0;
             this.txt2.TextPlaceholder = "";
             this.txt2.UseSystemPasswordChar = false;
+            this.txt2.Visible = false;
             this.txt2.WordWrap = true;
             // 
             // txt4
@@ -1339,7 +1349,7 @@ namespace espepe
             this.txt4.IconRight = null;
             this.txt4.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txt4.Lines = new string[0];
-            this.txt4.Location = new System.Drawing.Point(112, 191);
+            this.txt4.Location = new System.Drawing.Point(112, 182);
             this.txt4.MaxLength = 32767;
             this.txt4.MinimumSize = new System.Drawing.Size(1, 1);
             this.txt4.Modified = false;
@@ -1384,6 +1394,7 @@ namespace espepe
             this.txt4.TextMarginTop = 0;
             this.txt4.TextPlaceholder = "";
             this.txt4.UseSystemPasswordChar = false;
+            this.txt4.Visible = false;
             this.txt4.WordWrap = true;
             // 
             // PembayaranForm

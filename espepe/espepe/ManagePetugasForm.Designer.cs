@@ -79,6 +79,7 @@ namespace espepe
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPetugas)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -166,6 +167,7 @@ namespace espepe
             this.txt1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt1.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txt1.DefaultText = "";
+            this.txt1.Enabled = false;
             this.txt1.FillColor = System.Drawing.Color.White;
             this.txt1.HideSelection = true;
             this.txt1.IconLeft = null;
@@ -210,7 +212,7 @@ namespace espepe
             this.txt1.SelectionLength = 0;
             this.txt1.SelectionStart = 0;
             this.txt1.ShortcutsEnabled = true;
-            this.txt1.Size = new System.Drawing.Size(246, 33);
+            this.txt1.Size = new System.Drawing.Size(46, 33);
             this.txt1.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txt1.TabIndex = 1;
             this.txt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -727,7 +729,7 @@ namespace espepe
             // 
             this.txtIdLevel.Location = new System.Drawing.Point(682, 25);
             this.txtIdLevel.Name = "txtIdLevel";
-            this.txtIdLevel.Size = new System.Drawing.Size(86, 20);
+            this.txtIdLevel.Size = new System.Drawing.Size(32, 20);
             this.txtIdLevel.TabIndex = 5;
             // 
             // bunifuButton5
@@ -1180,6 +1182,10 @@ namespace espepe
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
             this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
             // ManagePetugasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1221,5 +1227,6 @@ namespace espepe
         private System.Windows.Forms.TextBox txtIdLevel;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton5;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

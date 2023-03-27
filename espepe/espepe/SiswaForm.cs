@@ -77,5 +77,16 @@ namespace espepe
         {
             openChildForm(new HistoryPembayaran());
         }
+
+        private void bunifuButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new LoginForm().Show();
+        }
+
+        private void bunifuLabel1_Click(object sender, EventArgs e)
+        {
+            activeForm.Hide();
+        }
     }
 }

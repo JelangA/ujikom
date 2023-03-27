@@ -40,10 +40,10 @@ namespace espepe
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.ChildPanel = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.labelid = new System.Windows.Forms.Label();
+            this.nisnlabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelnama = new System.Windows.Forms.Label();
-            this.nisnlabel = new System.Windows.Forms.Label();
+            this.labelid = new System.Windows.Forms.Label();
             this.menuPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
@@ -111,7 +111,7 @@ namespace espepe
             this.bunifuButton4.IdleIconLeftImage = null;
             this.bunifuButton4.IdleIconRightImage = null;
             this.bunifuButton4.IndicateFocus = false;
-            this.bunifuButton4.Location = new System.Drawing.Point(0, 163);
+            this.bunifuButton4.Location = new System.Drawing.Point(0, 166);
             this.bunifuButton4.Name = "bunifuButton4";
             this.bunifuButton4.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton4.OnDisabledState.BorderRadius = 1;
@@ -157,9 +157,9 @@ namespace espepe
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 98);
+            this.panel1.Location = new System.Drawing.Point(0, 142);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(183, 65);
+            this.panel1.Size = new System.Drawing.Size(183, 24);
             this.panel1.TabIndex = 10;
             // 
             // bunifuButton6
@@ -251,6 +251,7 @@ namespace espepe
             this.bunifuButton6.TextMarginLeft = 0;
             this.bunifuButton6.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton6.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton6.Click += new System.EventHandler(this.bunifuButton6_Click);
             // 
             // LogoPanel
             // 
@@ -259,7 +260,7 @@ namespace espepe
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(183, 98);
+            this.LogoPanel.Size = new System.Drawing.Size(183, 142);
             this.LogoPanel.TabIndex = 0;
             // 
             // bunifuLabel1
@@ -281,6 +282,7 @@ namespace espepe
             this.bunifuLabel1.Text = "SPP Payment";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel1.Click += new System.EventHandler(this.bunifuLabel1_Click);
             // 
             // bunifuPanel1
             // 
@@ -319,15 +321,16 @@ namespace espepe
             this.ChildPanel.Size = new System.Drawing.Size(724, 522);
             this.ChildPanel.TabIndex = 2;
             // 
-            // labelid
+            // nisnlabel
             // 
-            this.labelid.AutoSize = true;
-            this.labelid.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelid.Location = new System.Drawing.Point(146, 186);
-            this.labelid.Name = "labelid";
-            this.labelid.Size = new System.Drawing.Size(35, 13);
-            this.labelid.TabIndex = 2;
-            this.labelid.Text = "label1";
+            this.nisnlabel.AutoSize = true;
+            this.nisnlabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.nisnlabel.Location = new System.Drawing.Point(677, 87);
+            this.nisnlabel.Name = "nisnlabel";
+            this.nisnlabel.Size = new System.Drawing.Size(35, 13);
+            this.nisnlabel.TabIndex = 3;
+            this.nisnlabel.Text = "label1";
+            this.nisnlabel.Visible = false;
             // 
             // label2
             // 
@@ -353,15 +356,16 @@ namespace espepe
             this.labelnama.TabIndex = 0;
             this.labelnama.Text = "label1";
             // 
-            // nisnlabel
+            // labelid
             // 
-            this.nisnlabel.AutoSize = true;
-            this.nisnlabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.nisnlabel.Location = new System.Drawing.Point(409, 143);
-            this.nisnlabel.Name = "nisnlabel";
-            this.nisnlabel.Size = new System.Drawing.Size(35, 13);
-            this.nisnlabel.TabIndex = 3;
-            this.nisnlabel.Text = "label1";
+            this.labelid.AutoSize = true;
+            this.labelid.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelid.Location = new System.Drawing.Point(677, 25);
+            this.labelid.Name = "labelid";
+            this.labelid.Size = new System.Drawing.Size(35, 13);
+            this.labelid.TabIndex = 2;
+            this.labelid.Text = "label1";
+            this.labelid.Visible = false;
             // 
             // SiswaForm
             // 
@@ -395,7 +399,7 @@ namespace espepe
         private Bunifu.UI.WinForms.BunifuGradientPanel ChildPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelnama;
-        private System.Windows.Forms.Label labelid;
         private System.Windows.Forms.Label nisnlabel;
+        private System.Windows.Forms.Label labelid;
     }
 }

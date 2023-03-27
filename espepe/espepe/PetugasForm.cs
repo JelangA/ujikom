@@ -75,13 +75,6 @@ namespace espepe
             showSubmenu(subPanel3);
         }
 
-        private void bunifuButton4_Click(object sender, EventArgs e)
-        {
-            //code...
-
-            hideMenu();
-        }
-
         private void bunifuButton5_Click(object sender, EventArgs e)
         {
             //code...
@@ -92,14 +85,7 @@ namespace espepe
         private void bunifuButton8_Click(object sender, EventArgs e)
         {
             //code...
-
-            hideMenu();
-        }
-
-        private void bunifuButton9_Click(object sender, EventArgs e)
-        {
-            //code...
-
+            new PembayaranForm().Show();
             hideMenu();
         }
 

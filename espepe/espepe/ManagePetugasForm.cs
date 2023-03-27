@@ -29,6 +29,8 @@ namespace espepe
         private void ManagePetugasForm_Load(object sender, EventArgs e)
         {
             bersih();
+            this.dataGridPetugas.Columns["id_user"].Visible = false;
+            this.dataGridPetugas.Columns["id_petugas"].Visible = false;
         }
 
 
@@ -238,7 +240,15 @@ namespace espepe
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            insertdata();
+            if (cmb1.Text == "Pilih Level")
+            {
+                MessageBox.Show("Silahkan Pilih Level Petugas");
+            }
+            else
+            {
+                insertdata();
+            }
+            
         }
     }
 }

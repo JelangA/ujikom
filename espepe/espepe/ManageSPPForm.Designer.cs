@@ -108,7 +108,7 @@ namespace espepe
             this.bunifuLabel7.CursorType = null;
             this.bunifuLabel7.Font = new System.Drawing.Font("Sitka Heading", 20F, System.Drawing.FontStyle.Bold);
             this.bunifuLabel7.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel7.Location = new System.Drawing.Point(352, 3);
+            this.bunifuLabel7.Location = new System.Drawing.Point(344, 13);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel7.Size = new System.Drawing.Size(146, 39);

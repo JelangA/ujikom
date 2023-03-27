@@ -20,6 +20,8 @@ namespace espepe
         private MySqlDataReader rd;
         private MySqlCommand cmd, cmd2, cmd3;
 
+        string idkelas = "";
+
         string tahun = DateTime.Now.ToString("yyyy");
 
         koneksi koneksi = new koneksi();
@@ -36,7 +38,7 @@ namespace espepe
             txt4.Text = "";
             txt5.Text = "";
             txt6.Text = "";
-            txt7.Text = "";
+            txt7.Text = "Pilih Kelas";
             txt8.Text = "";
             txtIdLevel.Text = "";
             incrementid();
@@ -45,7 +47,30 @@ namespace espepe
             incrementidSiswa();
         }
 
-        void cmbSpp()
+        //void getIdKelas()
+        //{
+        //    //get data IdOrder from database to combobox1 
+        //    MySqlConnection conn = koneksi.GetKon();
+        //    conn.Open();
+        //    try
+        //    {
+        //        cmd = new MySqlCommand("select id_kelas from kelas where nama_kelas='" + idkelas + "'", conn);
+        //        rd = cmd.ExecuteReader();
+        //        while (rd.Read())
+        //        {
+        //            string sName = rd.GetString(0);
+        //            label1.Text = sName;
+        //        }
+        //    }
+        //    catch (Exception g)
+        //    {
+        //        MessageBox.Show(g.Message);
+        //    }
+        //    conn.Close();
+        //    rd.Close();
+        //}
+
+        void cmbKelas()
         {
             //get data IdOrder from database to combobox1 
             MySqlConnection conn = koneksi.GetKon();
@@ -53,12 +78,12 @@ namespace espepe
             try
 
             {
-                cmd = new MySqlCommand("select * from kelas", conn);
+                cmd = new MySqlCommand("select id_kelas from kelas", conn);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
                     string sName = rd.GetString(0);
-                    cmb1.Items.Add(sName);
+                    txt7.Items.Add(sName);
                 }
             }
             catch (Exception g)
@@ -146,7 +171,7 @@ namespace espepe
             }
             catch (Exception)
             {
-                MessageBox.Show("Gagal mendapat data petugas");
+                MessageBox.Show("Gagal mendapat data");
             }
             conn.Close();
         }
@@ -173,10 +198,11 @@ namespace espepe
                            txt3.Text + "','siswa')", conn);
                 cmd3 = new MySqlCommand("insert into spp values('" +
                            txt8.Text + "','" +
-                           tahun + "','0')", conn);
+                           tahun + "','3000000')", conn);
+                cmd3.ExecuteNonQuery();
                 cmd2.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
-                cmd3.ExecuteNonQuery();
+                
                 MessageBox.Show("berhasil di simpan");
                 bersih();
             }
@@ -245,12 +271,44 @@ namespace espepe
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            insertData();
+            if (txt1== null ||
+                txt2 == null||
+                txt3 == null ||
+                txt4 == null ||
+                txt5 == null ||
+                txt6 == null ||
+                txt7.Text == "Pilih Kelas" ||
+                txt8 == null ||
+                txtIdLevel == null)
+            {
+                MessageBox.Show("Lengkapi Data");
+            }
+            else
+            {
+                insertData();
+            }
+            
         }
 
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
-            updateData();
+            if (txt1 == null ||
+                txt2 == null ||
+                txt3 == null ||
+                txt4 == null ||
+                txt5 == null ||
+                txt6 == null ||
+                txt7.Text == "Pilih Kelas" ||
+                txt8 == null ||
+                txtIdLevel == null)
+            {
+                MessageBox.Show("Lengkapi Data");
+            }
+            else
+            {
+                updateData();
+            }
+            
         }
 
         private void bunifuButton3_Click(object sender, EventArgs e)
@@ -292,6 +350,11 @@ namespace espepe
             printer.PrintMargins.Top = 20;
         }
 
+        private void txt7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //getIdKelas();
+        }
+
         private void bunifuButton5_Click(object sender, EventArgs e)
         {
             bersih();
@@ -300,7 +363,10 @@ namespace espepe
         private void ManageSiswaForm_Load(object sender, EventArgs e)
         {
             bersih();
-            cmbSpp();
+            cmbKelas();
+            
+
+
         }
     }
 }

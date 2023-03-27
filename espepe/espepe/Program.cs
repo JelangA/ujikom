@@ -16,7 +16,7 @@ namespace espepe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManageSiswaForm());
+            Application.Run(new LoginForm());
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using DGVPrinterHelper;
 
 namespace espepe
 {
@@ -27,6 +28,7 @@ namespace espepe
         private void ManageKelas_Load(object sender, EventArgs e)
         {
             bersih();
+            //this.dataGridKelas.Columns["id_kelas"].Visible = false;
         }
         private void incrementid()
         {
@@ -60,7 +62,7 @@ namespace espepe
         {
             txt1.Text = "";
             txt2.Text = "";
-            txt3.Text = "";
+            txt3.Text = "Pilih Jurusan";
             incrementid();
             tampilData();
 
@@ -73,12 +75,12 @@ namespace espepe
             conn.Open();
             try
             {
-                cmd = new MySqlCommand("SELECT * from kelas", conn);
+                cmd = new MySqlCommand("SELECT  nama_kelas,kompetensi_keahlian,id_kelas from kelas", conn);
                 ds = new DataSet();
                 da = new MySqlDataAdapter(cmd);
                 da.Fill(ds, "kelas");
-                dataGridPetugas.DataSource = ds;
-                dataGridPetugas.DataMember = "kelas";
+                dataGridKelas.DataSource = ds;
+                dataGridKelas.DataMember = "kelas";
             }
             catch (Exception g)
             {
@@ -150,7 +152,15 @@ namespace espepe
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            insertData();
+            if (txt3.Text == "Pilih Jurusan")
+            {
+                MessageBox.Show("Silahkan Pilih Jurusan");
+            }
+            else
+            {
+                insertData();
+            }
+            
         }
 
         private void bunifuButton2_Click(object sender, EventArgs e)
@@ -170,10 +180,37 @@ namespace espepe
 
         private void dataGridPetugas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = this.dataGridPetugas.Rows[e.RowIndex];
-            txt1.Text = row.Cells[0].Value.ToString();
-            txt2.Text = row.Cells[1].Value.ToString();
-            txt3.Text = row.Cells[2].Value.ToString();
+            try
+            {
+                DataGridViewRow row = this.dataGridKelas.Rows[e.RowIndex];
+                txt1.Text = row.Cells[0].Value.ToString();
+                txt2.Text = row.Cells[1].Value.ToString();
+                txt3.Text = row.Cells[2].Value.ToString();
+            }catch (Exception)
+            {
+                MessageBox.Show("pilih column");
+            }
+            
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Daftar User";
+
+            printer.SubTitle = string.Format(
+                "tanggal {0}", DateTime.Now.Date.ToString("dddd-MMMM-yyyy")
+                );
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.TitleSpacing = 12;
+            printer.FooterSpacing = 15;
+            printer.PrintMargins.Top = 20;
+            printer.PrintPreviewDataGridView(dataGridKelas);
+            printer.PrintMargins.Top = 20;
         }
     }
 }
