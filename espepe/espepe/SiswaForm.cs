@@ -19,6 +19,8 @@ namespace espepe
 
         public static string idsiswa;
         public static string nisn;
+        public string sppdibayar;
+        public int jumlahspp = 3000000;
 
         koneksi koneksi = new koneksi();
 
@@ -49,7 +51,7 @@ namespace espepe
         {
             MySqlConnection conn = koneksi.GetKon();
             conn.Open();
-            cmd = new MySqlCommand("select nama, id_siswa, nisn from siswa where id_user='" + LoginForm.UserID + "'", conn);
+            cmd = new MySqlCommand("select siswa.nama, siswa.id_siswa, siswa.id_siswa, spp.nominal, siswa.nisn, kelas.kompetensi_keahlian from siswa LEFT JOIN spp on siswa.id_spp = spp.id_spp LEFT JOIN kelas on siswa.id_kelas = kelas.id_kelas where id_user='" + LoginForm.UserID + "'", conn);
             rd = cmd.ExecuteReader();
             rd.Read();
             if (rd.HasRows)
@@ -57,8 +59,10 @@ namespace espepe
                 labelnama.Text = rd[0].ToString();
                 labelid.Text = rd[1].ToString();
                 idsiswa = rd[1].ToString();
-                nisn = rd[2].ToString();
+                nisn = rd["nisn"].ToString();
                 nisnlabel.Text = rd[2].ToString();
+                SPP.Text = rd[3].ToString();
+                sppdibayar = rd[3].ToString();
             }
             else
             {
@@ -68,9 +72,21 @@ namespace espepe
             rd.Close();
         }
 
+       
+
         private void SiswaForm_Load(object sender, EventArgs e)
         {
             getDataUser();
+            if (Convert.ToInt32(sppdibayar) >= jumlahspp)
+            {
+                labelstatus.Text = "Belum Lunas";
+            }
+            else
+            {
+                labelstatus.Text = "Belum Lunas";
+            }
+            sisalabel.Text = (jumlahspp - Convert.ToInt32(sppdibayar)).ToString();
+
         }
 
         private void bunifuButton4_Click(object sender, EventArgs e)
@@ -88,5 +104,8 @@ namespace espepe
         {
             activeForm.Hide();
         }
+
+        
+        
     }
 }

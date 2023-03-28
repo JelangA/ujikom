@@ -709,8 +709,7 @@ namespace espepe
             // bunifuLabel7
             // 
             this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.bunifuLabel7.AutoEllipsis = false;
             this.bunifuLabel7.BackColor = System.Drawing.Color.White;
             this.bunifuLabel7.CursorType = null;
@@ -731,6 +730,7 @@ namespace espepe
             this.txtIdLevel.Name = "txtIdLevel";
             this.txtIdLevel.Size = new System.Drawing.Size(32, 20);
             this.txtIdLevel.TabIndex = 5;
+            this.txtIdLevel.Visible = false;
             // 
             // bunifuButton5
             // 

@@ -28,7 +28,6 @@ namespace espepe
         private void ManageKelas_Load(object sender, EventArgs e)
         {
             bersih();
-            //this.dataGridKelas.Columns["id_kelas"].Visible = false;
         }
         private void incrementid()
         {

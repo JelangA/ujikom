@@ -30,8 +30,8 @@ namespace espepe
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiswaForm));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.bunifuButton4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,10 +40,17 @@ namespace espepe
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.ChildPanel = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.nisnlabel = new System.Windows.Forms.Label();
+            this.labelid = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelnama = new System.Windows.Forms.Label();
-            this.labelid = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.SPP = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.sisalabel = new System.Windows.Forms.Label();
+            this.labelstatus = new System.Windows.Forms.Label();
             this.menuPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
@@ -82,11 +89,11 @@ namespace espepe
             this.bunifuButton4.ColorContrastOnClick = 45;
             this.bunifuButton4.ColorContrastOnHover = 45;
             this.bunifuButton4.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.bunifuButton4.CustomizableEdges = borderEdges1;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.bunifuButton4.CustomizableEdges = borderEdges5;
             this.bunifuButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton4.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -181,11 +188,11 @@ namespace espepe
             this.bunifuButton6.ColorContrastOnClick = 45;
             this.bunifuButton6.ColorContrastOnHover = 45;
             this.bunifuButton6.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.bunifuButton6.CustomizableEdges = borderEdges2;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.bunifuButton6.CustomizableEdges = borderEdges6;
             this.bunifuButton6.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton6.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton6.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -306,6 +313,13 @@ namespace espepe
             this.ChildPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ChildPanel.BackgroundImage")));
             this.ChildPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ChildPanel.BorderRadius = 1;
+            this.ChildPanel.Controls.Add(this.label4);
+            this.ChildPanel.Controls.Add(this.label3);
+            this.ChildPanel.Controls.Add(this.labelstatus);
+            this.ChildPanel.Controls.Add(this.sisalabel);
+            this.ChildPanel.Controls.Add(this.SPP);
+            this.ChildPanel.Controls.Add(this.label);
+            this.ChildPanel.Controls.Add(this.bunifuLabel2);
             this.ChildPanel.Controls.Add(this.nisnlabel);
             this.ChildPanel.Controls.Add(this.labelid);
             this.ChildPanel.Controls.Add(this.label2);
@@ -321,6 +335,22 @@ namespace espepe
             this.ChildPanel.Size = new System.Drawing.Size(724, 522);
             this.ChildPanel.TabIndex = 2;
             // 
+            // bunifuLabel2
+            // 
+            this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.CursorType = null;
+            this.bunifuLabel2.Font = new System.Drawing.Font("Sitka Display", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuLabel2.Location = new System.Drawing.Point(256, 116);
+            this.bunifuLabel2.Name = "bunifuLabel2";
+            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel2.Size = new System.Drawing.Size(176, 50);
+            this.bunifuLabel2.TabIndex = 4;
+            this.bunifuLabel2.Text = "Siswa Form";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // nisnlabel
             // 
             this.nisnlabel.AutoSize = true;
@@ -330,7 +360,16 @@ namespace espepe
             this.nisnlabel.Size = new System.Drawing.Size(35, 13);
             this.nisnlabel.TabIndex = 3;
             this.nisnlabel.Text = "label1";
-            this.nisnlabel.Visible = false;
+            // 
+            // labelid
+            // 
+            this.labelid.AutoSize = true;
+            this.labelid.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelid.Location = new System.Drawing.Point(677, 25);
+            this.labelid.Name = "labelid";
+            this.labelid.Size = new System.Drawing.Size(35, 13);
+            this.labelid.TabIndex = 2;
+            this.labelid.Text = "label1";
             // 
             // label2
             // 
@@ -338,7 +377,7 @@ namespace espepe
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(124, 123);
+            this.label2.Location = new System.Drawing.Point(185, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 40);
             this.label2.TabIndex = 1;
@@ -350,22 +389,77 @@ namespace espepe
             this.labelnama.BackColor = System.Drawing.Color.Transparent;
             this.labelnama.Font = new System.Drawing.Font("Sitka Heading", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelnama.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelnama.Location = new System.Drawing.Point(224, 123);
+            this.labelnama.Location = new System.Drawing.Point(296, 190);
             this.labelnama.Name = "labelnama";
             this.labelnama.Size = new System.Drawing.Size(81, 39);
             this.labelnama.TabIndex = 0;
             this.labelnama.Text = "label1";
             // 
-            // labelid
+            // label
             // 
-            this.labelid.AutoSize = true;
-            this.labelid.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelid.Location = new System.Drawing.Point(677, 25);
-            this.labelid.Name = "labelid";
-            this.labelid.Size = new System.Drawing.Size(35, 13);
-            this.labelid.TabIndex = 2;
-            this.labelid.Text = "label1";
-            this.labelid.Visible = false;
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Sitka Small", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.SystemColors.Control;
+            this.label.Location = new System.Drawing.Point(180, 297);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(219, 40);
+            this.label.TabIndex = 5;
+            this.label.Text = "SPP terbayar : ";
+            // 
+            // SPP
+            // 
+            this.SPP.AutoSize = true;
+            this.SPP.Font = new System.Drawing.Font("Sitka Small", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SPP.ForeColor = System.Drawing.SystemColors.Control;
+            this.SPP.Location = new System.Drawing.Point(388, 297);
+            this.SPP.Name = "SPP";
+            this.SPP.Size = new System.Drawing.Size(65, 40);
+            this.SPP.TabIndex = 5;
+            this.SPP.Text = "spp";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Sitka Small", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(180, 350);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(278, 40);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Sisa Pembayaran : ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Sitka Small", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(185, 244);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 40);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Status :";
+            // 
+            // sisalabel
+            // 
+            this.sisalabel.AutoSize = true;
+            this.sisalabel.Font = new System.Drawing.Font("Sitka Small", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sisalabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.sisalabel.Location = new System.Drawing.Point(450, 350);
+            this.sisalabel.Name = "sisalabel";
+            this.sisalabel.Size = new System.Drawing.Size(97, 40);
+            this.sisalabel.TabIndex = 6;
+            this.sisalabel.Text = "label1";
+            // 
+            // labelstatus
+            // 
+            this.labelstatus.AutoSize = true;
+            this.labelstatus.Font = new System.Drawing.Font("Sitka Small", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelstatus.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelstatus.Location = new System.Drawing.Point(312, 244);
+            this.labelstatus.Name = "labelstatus";
+            this.labelstatus.Size = new System.Drawing.Size(97, 40);
+            this.labelstatus.TabIndex = 6;
+            this.labelstatus.Text = "label1";
             // 
             // SiswaForm
             // 
@@ -401,5 +495,12 @@ namespace espepe
         private System.Windows.Forms.Label labelnama;
         private System.Windows.Forms.Label nisnlabel;
         private System.Windows.Forms.Label labelid;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private System.Windows.Forms.Label SPP;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label sisalabel;
+        private System.Windows.Forms.Label labelstatus;
     }
 }

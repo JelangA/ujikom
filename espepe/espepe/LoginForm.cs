@@ -57,11 +57,15 @@ namespace espepe
                         UserID = rd[0].ToString();
                         new SiswaForm().Show();
                     }
+                    else
+                    {
+                        MessageBox.Show("username atau password");
+                    }
 
                 }
                 else
                 {
-                    MessageBox.Show("tidak ada akun!!!");
+                    MessageBox.Show("Username atau password salah");
                 }
                 rd.Close();
             }
@@ -71,6 +75,7 @@ namespace espepe
             }
             conn.Close();
         }
+
 
         private void bersih()
         {

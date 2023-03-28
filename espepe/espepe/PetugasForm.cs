@@ -19,6 +19,9 @@ namespace espepe
 
         koneksi koneksi = new koneksi();
 
+        private Form activeForm = null;
+
+
         public static string idPetugas;
         
         public PetugasForm()
@@ -47,10 +50,22 @@ namespace espepe
             rd.Close();
         }
 
-        private void costumeDesign()
+        private void openChildForm(Form childForm)
         {
-            subPanel3.Visible = false;
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            ChildPanel.Controls.Add(childForm);
+            ChildPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
+
 
         private void hideMenu()
         {
@@ -78,14 +93,14 @@ namespace espepe
         private void bunifuButton5_Click(object sender, EventArgs e)
         {
             //code...
-
+            openChildForm(new ReportForm());
             hideMenu();
         }
 
         private void bunifuButton8_Click(object sender, EventArgs e)
         {
             //code...
-            new PembayaranForm().Show();
+            openChildForm(new PembayaranForm());
             hideMenu();
         }
 
@@ -99,6 +114,17 @@ namespace espepe
         {
             hideMenu();
             getDataUser();
+        }
+
+        private void bunifuLabel1_Click(object sender, EventArgs e)
+        {
+            activeForm.Hide();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new HostoryPembayaranAll());
+            hideMenu();
         }
     }
 }

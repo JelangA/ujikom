@@ -20,9 +20,9 @@ namespace espepe
         private MySqlDataReader rd;
         private MySqlCommand cmd, cmd2, cmd3;
 
-        string idkelas = "";
-
         string tahun = DateTime.Now.ToString("yyyy");
+
+        public string idkelas;
 
         koneksi koneksi = new koneksi();
         public ManageSiswaForm()
@@ -41,34 +41,13 @@ namespace espepe
             txt7.Text = "Pilih Kelas";
             txt8.Text = "";
             txtIdLevel.Text = "";
+            idkelas = "";
+            textBox1.Text = "";
             incrementid();
             incrementidLevel();
             tampilData();
             incrementidSiswa();
         }
-
-        //void getIdKelas()
-        //{
-        //    //get data IdOrder from database to combobox1 
-        //    MySqlConnection conn = koneksi.GetKon();
-        //    conn.Open();
-        //    try
-        //    {
-        //        cmd = new MySqlCommand("select id_kelas from kelas where nama_kelas='" + idkelas + "'", conn);
-        //        rd = cmd.ExecuteReader();
-        //        while (rd.Read())
-        //        {
-        //            string sName = rd.GetString(0);
-        //            label1.Text = sName;
-        //        }
-        //    }
-        //    catch (Exception g)
-        //    {
-        //        MessageBox.Show(g.Message);
-        //    }
-        //    conn.Close();
-        //    rd.Close();
-        //}
 
         void cmbKelas()
         {
@@ -78,7 +57,7 @@ namespace espepe
             try
 
             {
-                cmd = new MySqlCommand("select id_kelas from kelas", conn);
+                cmd = new MySqlCommand("select nama_kelas from kelas", conn);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
@@ -154,6 +133,28 @@ namespace espepe
             rd.Close();
         }
 
+        private void getidKelas()
+        {
+            MySqlConnection conn = koneksi.GetKon();
+            conn.Open();
+            try
+
+            {
+                cmd = new MySqlCommand("select id_kelas from kelas where nama_kelas='"  + txt7.Text +"'", conn);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    textBox1.Text = rd.GetString(0);
+                }
+            }
+            catch (Exception g)
+            {
+                MessageBox.Show(g.Message);
+            }
+            conn.Close();
+            rd.Close();
+        }
+
         //======================================================= crud ======================================================
 
         private void tampilData()
@@ -189,7 +190,7 @@ namespace espepe
                            txt4.Text + "','" +
                            txt5.Text + "','" +
                            txt6.Text + "','" +
-                           txt7.Text + "','" +
+                           textBox1.Text + "','" +
                            txt8.Text + "','" +
                            txtIdLevel.Text + "')", conn);
                 cmd2 = new MySqlCommand("insert into level_user values('" +
@@ -198,7 +199,7 @@ namespace espepe
                            txt3.Text + "','siswa')", conn);
                 cmd3 = new MySqlCommand("insert into spp values('" +
                            txt8.Text + "','" +
-                           tahun + "','3000000')", conn);
+                           tahun + "','0')", conn);
                 cmd3.ExecuteNonQuery();
                 cmd2.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
@@ -225,7 +226,7 @@ namespace espepe
                     txt4.Text + "',alamat='" +
                     txt5.Text + "',no_telp='" +
                     txt6.Text + "',id_kelas='" +
-                    txt7.Text + "',id_spp='" +
+                    textBox1.Text + "',id_spp='" +
                     txt8.Text + "',id_user='" +
                     txtIdLevel.Text + "'where id_siswa='" +
                     txt1.Text + "'", conn);
@@ -271,17 +272,32 @@ namespace espepe
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            if (txt1== null ||
-                txt2 == null||
-                txt3 == null ||
-                txt4 == null ||
-                txt5 == null ||
-                txt6 == null ||
+            if (txt1.Text == null ||
+                txt4.Text == null ||
+                txt5.Text == null ||
+                txt6.Text == null ||
                 txt7.Text == "Pilih Kelas" ||
-                txt8 == null ||
+                txt8.Text == null ||
+                textBox1.Text == null ||
                 txtIdLevel == null)
             {
                 MessageBox.Show("Lengkapi Data");
+            }
+            else if (txt2.Text.Length < 10)
+            {
+                MessageBox.Show("Data nisn harus 10 karakter ");
+            }
+            else if(txt3.Text.Length < 8)
+            {
+                MessageBox.Show("Data nisn harus 8 karakter ");
+            }
+            else if (txt2.Text.Length < 10)
+            {
+                MessageBox.Show("Data nisn harus 10 karakter ");
+            }
+            else if (txt3.Text.Length < 8)
+            {
+                MessageBox.Show("Data nisn harus 8 karakter ");
             }
             else
             {
@@ -298,7 +314,7 @@ namespace espepe
                 txt4 == null ||
                 txt5 == null ||
                 txt6 == null ||
-                txt7.Text == "Pilih Kelas" ||
+                textBox1.Text == "" || 
                 txt8 == null ||
                 txtIdLevel == null)
             {
@@ -325,7 +341,7 @@ namespace espepe
             txt4.Text = row.Cells[3].Value.ToString();
             txt5.Text = row.Cells[4].Value.ToString();
             txt6.Text = row.Cells[5].Value.ToString();
-            txt7.Text = row.Cells[6].Value.ToString();
+            textBox1.Text = row.Cells[6].Value.ToString();
             txt8.Text = row.Cells[7].Value.ToString();
             txtIdLevel.Text = row.Cells[8].Value.ToString();
         }
@@ -352,7 +368,12 @@ namespace espepe
 
         private void txt7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //getIdKelas();
+            getidKelas();
+        }
+
+        private void bunifuLabel7_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void bunifuButton5_Click(object sender, EventArgs e)
@@ -364,8 +385,6 @@ namespace espepe
         {
             bersih();
             cmbKelas();
-            
-
 
         }
     }

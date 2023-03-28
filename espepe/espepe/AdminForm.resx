@@ -127,6 +127,15 @@
         HaDW/68AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="bunifuButton10.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAALcAAAAzCAYAAADVT5lRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC9SURBVHhe7dI5EcMAAANBU3BQmD8dwwiAPP0RsGaLbU6t
+        juN13T8fGHP/z10DPF9GWJARFmSEBRlhQUZYkBEWZIQFGWFBRliQERZkhAUZYUFGWJARFmSEBRlhQUZY
+        kBEWZIQFGWFBRliQERZkhAUZYUFGWJARFmSEBRlhQUZYkBEWZIQFGWFBRliQERZkhAUZYUFGWJARFmSE
+        BRlhQUZYkBEWZIQFGWFBRliQERZkhAUZYcFxXu8c4MnO6/0FJ/aVQGBiZ8MAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="bunifuButton4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALcAAAAzCAYAAADVT5lRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -2078,5 +2087,8 @@
         nMZwsxhu1CzgNMKZv1dLjLRRFXDnIbcFnMZ4yzHcqFnAaRHAvUoQsxhpowrgNAZb3xZwGuMtx2jbaxZw
         GsOt9ue//x+mrqoP71F/9gAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Sitka Display'; font-size: 26.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(240, 240, 240); text-align: left; }</value>
   </data>
 </root>

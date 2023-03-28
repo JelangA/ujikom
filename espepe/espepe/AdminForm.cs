@@ -147,7 +147,7 @@ namespace espepe
         private void bunifuButton5_Click_1(object sender, EventArgs e)
         {
             //code..
-
+            openChildForm(new ReportForm());
             hideMenu();
         }
 
@@ -165,6 +165,12 @@ namespace espepe
         private void bunifuLabel1_Click(object sender, EventArgs e)
         {
             activeForm.Hide();
+        }
+
+        private void bunifuButton10_Click(object sender, EventArgs e)
+        {
+            openChildForm(new HostoryPembayaranAll());
+            hideMenu();
         }
     }
 }

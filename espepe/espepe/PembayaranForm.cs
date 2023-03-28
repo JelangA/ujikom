@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using DGVPrinterHelper;
+using System.Globalization;
 
 namespace espepe
 {
@@ -24,6 +25,7 @@ namespace espepe
 
         string nisnS = "";
         string jumlahnominal = "";
+        string nominalasal = "";
 
         public PembayaranForm()
         {
@@ -39,14 +41,12 @@ namespace espepe
         void bersih()
         {
             txt1.Text = Autoid(); ;
-            txt2.Text = AdminForm.idPetugas;
+            txt2.Text = LoginForm.UserID;
             txt3.Text = "Pilih Nisn";
-            txt4.Text = DateTime.Now.ToString("dd");
             txt5.Text = "";
             txt6.Text = "";
             txt7.Text = "";
             txt8.Text = "";
-            txtIdLevel.Text = "";
             //incrementidLevel();
             tampilData();
             //incrementidSiswa();
@@ -68,8 +68,7 @@ namespace espepe
                 {
                     string nisn = rd.GetString(1);
                     string sName = rd.GetString(3);
-                    txt3.Items.Add(nisn + " | " + sName);
-                    nisnS = nisn;
+                    txt3.Items.Add(nisn);
                 }
             }
             catch (Exception g)
@@ -81,6 +80,11 @@ namespace espepe
 
         }
 
+        private void setnisn()
+        {
+
+        }
+
         private void getnisn()
         {
             MySqlConnection conn = koneksi.GetKon();
@@ -88,12 +92,11 @@ namespace espepe
             try
 
             {
-                cmd = new MySqlCommand("select * from siswa where nisn='" + nisnS + "'" , conn);
+                cmd = new MySqlCommand("select * from siswa where nisn='" + txt3.Text + "'" , conn);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
                     string id = rd.GetString(7);
-
                     txt7.Text = id;
                 }
             }
@@ -136,7 +139,7 @@ namespace espepe
             return "";
         }
 
-        private void kurangNominal()
+        private void tambahNominal()
         {
             MySqlConnection conn = koneksi.GetKon();
             conn.Open();
@@ -145,7 +148,7 @@ namespace espepe
             rd.Read();
             if (rd.HasRows)
             {
-                jumlahnominal = (Convert.ToInt32(rd[0].ToString()) - Convert.ToInt32(txt8.Text)).ToString();
+                jumlahnominal = (Convert.ToInt32(rd[0].ToString()) + Convert.ToInt32(txt8.Text)).ToString();
             }
 
             conn.Close();
@@ -160,7 +163,7 @@ namespace espepe
             conn.Open();
             try
             {
-                cmd = new MySqlCommand("SELECT * FROM `pembayaran`", conn);
+                cmd = new MySqlCommand("SELECT a.id_pembayaran, c.nama_petugas, b.nisn, b.nama, a.tgl_bayar, a.bulan_dibayar, a.tahun_dibayar, a.id_spp, a.jumlah_bayar FROM pembayaran as a LEFT JOIN siswa as b ON a.nisn = b.nisn LEFT JOIN petugas as c ON a.id_petugas = c.id_petugas", conn);
                 ds = new DataSet();
                 da = new MySqlDataAdapter(cmd);
                 da.Fill(ds, "pembayaran");
@@ -183,19 +186,15 @@ namespace espepe
                 cmd = new MySqlCommand("insert into pembayaran values('" +
                            txt1.Text + "','" +
                            txt2.Text + "','" +
-                           nisnS + "','" +
-                           txt4.Text + "','" +
+                           txt3.Text + "','" +
+                           DateNow.Text + "','" +
                            txt5.Text + "','" +
                            txt6.Text + "','" +
                            txt7.Text + "','" +
                            txt8.Text + "')", conn);
-                //cmd2 = new MySqlCommand("insert into level_user values('" +
-                //           txtIdLevel.Text + "','" +
-                //           txt2.Text + "','" +
-                //           txt3.Text + "','siswa')", conn);
-                //cmd2.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("berhasil di simpan");
+                tambahNominal();
                 updatenominal();
                 bersih();
             }
@@ -208,7 +207,7 @@ namespace espepe
 
         private void updatenominal()
         {
-            kurangNominal();
+            tambahNominal();
             MySqlConnection conn = koneksi.GetKon();
             conn.Open();
             try
@@ -234,9 +233,9 @@ namespace espepe
             conn.Open();
             try
             {
-                cmd = new MySqlCommand("UPDATE siswa SET bulan_dibayar='" +
-                    txt2.Text + "',tahun_dibayar='" +
-                    txt8.Text + "'where id_siswa='" +
+                cmd = new MySqlCommand("UPDATE pembayaran SET bulan_dibayar='" +
+                    txt5.Text + "',tahun_dibayar='" +
+                    txt6.Text + "'where id_pembayaran='" +
                     txt1.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("berhasil di simpan");
@@ -255,7 +254,7 @@ namespace espepe
             conn.Open();
             try
             {
-                cmd = new MySqlCommand("delete from siswa where id_siswa='" + txt1.Text + "'", conn);
+                cmd = new MySqlCommand("delete from pembayaran where id_pembayaran='" + txt1.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Berhasil Di Hapus");
                 conn.Close();
@@ -275,7 +274,21 @@ namespace espepe
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            insertData();
+            if (txt1.Text == null ||
+               txt2.Text == null ||
+               txt3.Text == "Pilih Nisn" ||
+               DateNow.Text == null ||
+               txt5.Text == null ||
+               txt6.Text == null ||
+               txt7.Text == null ||
+               txt8.Text == null)
+            {
+                MessageBox.Show("Lengkapi Data");
+            }
+            else
+            {
+                insertData();
+            }
         }
 
         private void bunifuButton5_Click(object sender, EventArgs e)
@@ -305,7 +318,24 @@ namespace espepe
 
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
-           
+            deleteData();
+        }
+
+        private void dataGridPetugas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dataGridPetugas.Rows[e.RowIndex];
+            txt1.Text = row.Cells[0].Value.ToString();
+            txt3.Text = row.Cells[2].Value.ToString();
+            txt5.Text = row.Cells[5].Value.ToString();
+            txt6.Text = row.Cells[6].Value.ToString();
+            txt7.Text = row.Cells[7].Value.ToString();
+            txt8.Text = row.Cells[8].Value.ToString();
+            nominalasal = row.Cells[8].Value.ToString();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            updateData();
         }
     }
 }

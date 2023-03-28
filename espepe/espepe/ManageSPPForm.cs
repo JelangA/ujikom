@@ -149,16 +149,39 @@ namespace espepe
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            insertData();
+            if (txt2.Text == "" || txt3.Text =="")
+            {
+                MessageBox.Show(" Tolong Lengkapi Data");
+            }
+            else
+            {
+                insertData();
+            }
+            
         }
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
-            updateData();
+            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "")
+            {
+                MessageBox.Show(" Tolong Lengkapi Data");
+            }
+            else
+            {
+                updateData();
+            }
+            
         }
 
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
-            deleteData();
+            if (txt1.Text == "")
+            {
+                MessageBox.Show("Tolong Lengkapi Data");
+            }
+            {
+                deleteData();
+            }
+            
         }
 
         private void bunifuButton5_Click(object sender, EventArgs e)

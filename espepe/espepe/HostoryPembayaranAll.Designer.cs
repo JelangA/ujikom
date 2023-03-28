@@ -1,7 +1,7 @@
 ﻿
 namespace espepe
 {
-    partial class HistoryPembayaran
+    partial class HostoryPembayaranAll
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace espepe
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryPembayaran));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HostoryPembayaranAll));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -57,13 +57,12 @@ namespace espepe
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(809, 504);
-            this.bunifuPanel1.TabIndex = 0;
+            this.bunifuPanel1.TabIndex = 1;
             // 
             // bunifuLabel7
             // 
             this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.bunifuLabel7.AutoEllipsis = false;
             this.bunifuLabel7.BackColor = System.Drawing.Color.White;
             this.bunifuLabel7.CursorType = null;
@@ -140,16 +139,16 @@ namespace espepe
             this.bunifuDataGridView1.TabIndex = 0;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
-            // HistoryPembayaran
+            // HostoryPembayaranAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(833, 528);
             this.Controls.Add(this.bunifuPanel1);
-            this.Name = "HistoryPembayaran";
-            this.Text = "HistoryPembayaran";
-            this.Load += new System.EventHandler(this.HistoryPembayaran_Load);
+            this.Name = "HostoryPembayaranAll";
+            this.Text = "HostoryPembayaranAll";
+            this.Load += new System.EventHandler(this.HostoryPembayaranAll_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
@@ -160,7 +159,7 @@ namespace espepe
         #endregion
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
+        private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
     }
 }

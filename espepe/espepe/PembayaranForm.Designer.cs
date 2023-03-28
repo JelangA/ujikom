@@ -62,14 +62,9 @@ namespace espepe
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties25 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties26 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties27 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties28 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.txt3 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.txtIdLevel = new System.Windows.Forms.TextBox();
             this.bunifuButton5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -90,7 +85,7 @@ namespace espepe
             this.txt6 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txt5 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txt2 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.txt4 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.DateNow = new System.Windows.Forms.DateTimePicker();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPetugas)).BeginInit();
             this.SuspendLayout();
@@ -106,9 +101,9 @@ namespace espepe
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 50;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.DateNow);
             this.bunifuPanel1.Controls.Add(this.txt3);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel7);
-            this.bunifuPanel1.Controls.Add(this.txtIdLevel);
             this.bunifuPanel1.Controls.Add(this.bunifuButton5);
             this.bunifuPanel1.Controls.Add(this.bunifuButton4);
             this.bunifuPanel1.Controls.Add(this.bunifuButton3);
@@ -129,7 +124,6 @@ namespace espepe
             this.bunifuPanel1.Controls.Add(this.txt6);
             this.bunifuPanel1.Controls.Add(this.txt5);
             this.bunifuPanel1.Controls.Add(this.txt2);
-            this.bunifuPanel1.Controls.Add(this.txt4);
             this.bunifuPanel1.Location = new System.Drawing.Point(28, 12);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
@@ -182,8 +176,7 @@ namespace espepe
             // bunifuLabel7
             // 
             this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.bunifuLabel7.AutoEllipsis = false;
             this.bunifuLabel7.BackColor = System.Drawing.Color.White;
             this.bunifuLabel7.CursorType = null;
@@ -197,14 +190,6 @@ namespace espepe
             this.bunifuLabel7.Text = "Entri Transaksi Pembayaran";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // txtIdLevel
-            // 
-            this.txtIdLevel.Location = new System.Drawing.Point(671, 22);
-            this.txtIdLevel.Name = "txtIdLevel";
-            this.txtIdLevel.Size = new System.Drawing.Size(99, 20);
-            this.txtIdLevel.TabIndex = 5;
-            this.txtIdLevel.Visible = false;
             // 
             // bunifuButton5
             // 
@@ -479,8 +464,6 @@ namespace espepe
             // bunifuLabel9
             // 
             this.bunifuLabel9.AllowParentOverrides = false;
-            this.bunifuLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuLabel9.AutoEllipsis = false;
             this.bunifuLabel9.BackColor = System.Drawing.Color.White;
             this.bunifuLabel9.CursorType = null;
@@ -498,8 +481,6 @@ namespace espepe
             // bunifuLabel8
             // 
             this.bunifuLabel8.AllowParentOverrides = false;
-            this.bunifuLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuLabel8.AutoEllipsis = false;
             this.bunifuLabel8.BackColor = System.Drawing.Color.White;
             this.bunifuLabel8.CursorType = null;
@@ -518,8 +499,6 @@ namespace espepe
             // bunifuLabel6
             // 
             this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuLabel6.AutoEllipsis = false;
             this.bunifuLabel6.BackColor = System.Drawing.Color.White;
             this.bunifuLabel6.CursorType = null;
@@ -537,8 +516,6 @@ namespace espepe
             // bunifuLabel5
             // 
             this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.BackColor = System.Drawing.Color.White;
             this.bunifuLabel5.CursorType = null;
@@ -641,18 +618,17 @@ namespace espepe
             this.bunifuButton2.TextMarginLeft = 0;
             this.bunifuButton2.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton2.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton2.Click += new System.EventHandler(this.bunifuButton2_Click);
             // 
             // bunifuLabel4
             // 
             this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.BackColor = System.Drawing.Color.White;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuLabel4.ForeColor = System.Drawing.Color.Black;
-            this.bunifuLabel4.Location = new System.Drawing.Point(34, 191);
+            this.bunifuLabel4.Location = new System.Drawing.Point(34, 112);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel4.Size = new System.Drawing.Size(48, 15);
@@ -660,7 +636,6 @@ namespace espepe
             this.bunifuLabel4.Text = "Tgl Bayar";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel4.Visible = false;
             // 
             // bunifuButton1
             // 
@@ -755,8 +730,6 @@ namespace espepe
             // bunifuLabel3
             // 
             this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.BackColor = System.Drawing.Color.White;
             this.bunifuLabel3.CursorType = null;
@@ -833,12 +806,11 @@ namespace espepe
             this.dataGridPetugas.Size = new System.Drawing.Size(785, 198);
             this.dataGridPetugas.TabIndex = 0;
             this.dataGridPetugas.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dataGridPetugas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPetugas_CellContentClick);
             // 
             // bunifuLabel2
             // 
             this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.BackColor = System.Drawing.Color.White;
             this.bunifuLabel2.CursorType = null;
@@ -857,8 +829,6 @@ namespace espepe
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.BackColor = System.Drawing.Color.White;
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1322,80 +1292,14 @@ namespace espepe
             this.txt2.Visible = false;
             this.txt2.WordWrap = true;
             // 
-            // txt4
+            // DateNow
             // 
-            this.txt4.AcceptsReturn = false;
-            this.txt4.AcceptsTab = false;
-            this.txt4.AnimationSpeed = 200;
-            this.txt4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txt4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txt4.BackColor = System.Drawing.Color.Transparent;
-            this.txt4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txt4.BackgroundImage")));
-            this.txt4.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txt4.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txt4.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txt4.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txt4.BorderRadius = 1;
-            this.txt4.BorderThickness = 1;
-            this.txt4.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txt4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt4.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txt4.DefaultText = "";
-            this.txt4.FillColor = System.Drawing.Color.White;
-            this.txt4.HideSelection = true;
-            this.txt4.IconLeft = null;
-            this.txt4.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt4.IconPadding = 10;
-            this.txt4.IconRight = null;
-            this.txt4.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt4.Lines = new string[0];
-            this.txt4.Location = new System.Drawing.Point(112, 182);
-            this.txt4.MaxLength = 32767;
-            this.txt4.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txt4.Modified = false;
-            this.txt4.Multiline = false;
-            this.txt4.Name = "txt4";
-            stateProperties25.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties25.FillColor = System.Drawing.Color.Empty;
-            stateProperties25.ForeColor = System.Drawing.Color.Empty;
-            stateProperties25.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt4.OnActiveState = stateProperties25;
-            stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt4.OnDisabledState = stateProperties26;
-            stateProperties27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties27.FillColor = System.Drawing.Color.Empty;
-            stateProperties27.ForeColor = System.Drawing.Color.Empty;
-            stateProperties27.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt4.OnHoverState = stateProperties27;
-            stateProperties28.BorderColor = System.Drawing.Color.Silver;
-            stateProperties28.FillColor = System.Drawing.Color.White;
-            stateProperties28.ForeColor = System.Drawing.Color.Empty;
-            stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt4.OnIdleState = stateProperties28;
-            this.txt4.Padding = new System.Windows.Forms.Padding(3);
-            this.txt4.PasswordChar = '\0';
-            this.txt4.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txt4.PlaceholderText = "";
-            this.txt4.ReadOnly = false;
-            this.txt4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt4.SelectedText = "";
-            this.txt4.SelectionLength = 0;
-            this.txt4.SelectionStart = 0;
-            this.txt4.ShortcutsEnabled = true;
-            this.txt4.Size = new System.Drawing.Size(259, 33);
-            this.txt4.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txt4.TabIndex = 1;
-            this.txt4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt4.TextMarginBottom = 0;
-            this.txt4.TextMarginLeft = 3;
-            this.txt4.TextMarginTop = 0;
-            this.txt4.TextPlaceholder = "";
-            this.txt4.UseSystemPasswordChar = false;
-            this.txt4.Visible = false;
-            this.txt4.WordWrap = true;
+            this.DateNow.CustomFormat = "dd/MMMM/yyyy";
+            this.DateNow.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateNow.Location = new System.Drawing.Point(112, 112);
+            this.DateNow.Name = "DateNow";
+            this.DateNow.Size = new System.Drawing.Size(162, 20);
+            this.DateNow.TabIndex = 8;
             // 
             // PembayaranForm
             // 
@@ -1420,7 +1324,6 @@ namespace espepe
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private Bunifu.UI.WinForms.BunifuDropdown txt3;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
-        private System.Windows.Forms.TextBox txtIdLevel;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton5;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton4;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton3;
@@ -1441,6 +1344,6 @@ namespace espepe
         private Bunifu.UI.WinForms.BunifuTextBox txt6;
         private Bunifu.UI.WinForms.BunifuTextBox txt5;
         private Bunifu.UI.WinForms.BunifuTextBox txt2;
-        private Bunifu.UI.WinForms.BunifuTextBox txt4;
+        private System.Windows.Forms.DateTimePicker DateNow;
     }
 }

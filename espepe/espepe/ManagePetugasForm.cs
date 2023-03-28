@@ -244,6 +244,10 @@ namespace espepe
             {
                 MessageBox.Show("Silahkan Pilih Level Petugas");
             }
+            else if (txt5.Text.Length <= 5)
+            {
+                MessageBox.Show("Password Harus lebih dari 5 karakter");
+            }
             else
             {
                 insertdata();
